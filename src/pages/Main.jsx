@@ -12,7 +12,7 @@ export  const Main = () => {
 
     
     const [users, setUsers] = useState([])
-    const [value, setValue] = useState('')
+    // const [value, setValue] = useState('')
 
 
     useEffect(()=>{
