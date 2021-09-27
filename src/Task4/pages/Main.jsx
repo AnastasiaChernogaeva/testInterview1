@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from "react";
-import { PlotDataContainer } from "../components/PlotDataContainer.jsx";
+import { PlotlyData } from "../components/PlotData.jsx";
 
 export  const Main = () => {
 
@@ -9,7 +9,7 @@ export  const Main = () => {
     
     return(
         <div >
-           <PlotDataContainer/>
+           <PlotlyData/>
         </div>
     )
 }
