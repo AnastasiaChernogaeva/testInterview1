@@ -9,6 +9,12 @@ export const PlotDataContainer = () =>{
 
     useEffect(()=>{
         //fetch
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        // .then(response => response.json())
+        // .then(users => {
+        //     serverUsers=users
+        //     setUsers(users)
+        // })
         setMetrics(mockMetrics)
     }, [])
 
