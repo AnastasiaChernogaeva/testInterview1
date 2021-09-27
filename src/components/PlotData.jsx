@@ -5,6 +5,10 @@ import createPlotlyComponent from 'react-plotlyjs';
 import Plotly from 'plotly.js/dist/plotly-cartesian';
 const PlotlyComponent = createPlotlyComponent(Plotly);
 
+// import createPlotlyComponent from 'react-plotlyjs';
+// import Plotly from 'plotly.js/dist/plotly-cartesian';
+// const PlotlyComponent = createPlotlyComponent(Plotly);
+
 export const PlotlyData = ({data, amount}) =>{
     
       return (
@@ -20,7 +24,34 @@ export const PlotlyData = ({data, amount}) =>{
                 y: data.values.slice(0, amount),
               },
             ]}
-            layout={{ width: 600, height: 600, title: data.metricName }}/>)}</div>
+            layout={{ width: 600, height: 600, title: data.metricName }}/>)}
+          {
+            data&&data.timestamps&& (
+              <PlotlyComponent className="whatever"
+              data={[
+                {
+                type:"scatter",
+                mode:'lines+markers',
+                marker:{
+                  color:"blue",
+                },
+                x:data.timestamps.slice(0, amount).map((timestamp) => new Date(timestamp)),
+                y:data.values.slice(0,amount),
+              },
+            ]
+              }
+
+              layout={{
+                width:800,
+                height:500,
+                title:data.metricName,
+               
+              }}
+              />
+            )
+          }
+            
+            </div>
         </>
       );
     
